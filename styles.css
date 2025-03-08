@@ -1,0 +1,789 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    color: #000;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+/*navbarstyles*/
+nav {
+    padding: 0vw 4vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Navigation Links */
+#navpart2 {
+    display: flex;
+    gap: 5px;
+    flex-grow: 1;
+    justify-content: center;
+}
+/* Remove list item decoration (bullets, numbers) */
+ul, ol {
+    list-style: none;
+}
+
+/* Remove text decoration from "Whatsapp Us" button */
+.cta-button {
+    text-decoration: none;
+}
+
+
+/* Navigation Links Style */
+#navpart2 a {
+    position: relative;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 400; /* Default */
+    transition: color 0.3s ease-in-out;
+}
+
+#navpart2 a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 5px;
+    background-color: #0262A6;
+    transform: scaleX(0);
+    border-radius: 50px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#navpart2 a:hover {
+    color: #0262A6;
+}
+
+#navpart2 a:hover::after {
+    transform: scaleX(0.6);
+}
+
+/* Active Link */
+#navpart2 a.active {
+    font-weight: 700;
+    color: #000000;
+}
+
+#navpart2 a.active::after {
+    transform: scaleX(1);
+}
+
+/* Hide mobile toggle by default */
+.menu-checkbox {
+    display: none;
+}
+
+.toggle {
+    position: absolute;
+    right: 0;
+    width: 40px;
+    cursor: pointer;
+    margin: auto;
+    display: block;
+    height: calc(4px * 3 + 11px * 2);
+}
+
+.bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    border-radius: calc(4px / 2);
+    background: #0262A6;
+    color: inherit;
+    opacity: 1;
+    transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+/***** Collapse Animation *****/
+
+.bar--top {
+    bottom: calc(50% + 11px + 4px / 2);
+    transition-property: bottom, margin, transform;
+    transition-delay: calc(0s + 0.35s), 0s, 0s;
+}
+
+.bar--middle {
+    top: calc(50% - 4px / 2);
+    transition-property: top, opacity;
+    transition-duration: 0.35s, 0s;
+    transition-delay: calc(0s + 0.35s * 1.3), calc(0s + 0.35s * 1.3);
+}
+
+.bar--bottom {
+    top: calc(50% + 11px + 4px / 2);
+    transition-property: top, transform;
+    transition-delay: 0s;
+}
+
+#checkbox:checked + .toggle .bar--top {
+    bottom: calc(50% - 11px - 4px);
+    margin-bottom: calc(11px + 4px / 2);
+    transform: rotate(45deg);
+    transition-delay: calc(0s + 0.35s * .3), calc(0s + 0.35s * 1.3), calc(0s + 0.35s * 1.3);
+}
+
+#checkbox:checked + .toggle .bar--middle {
+    top: calc(50% + 11px);
+    opacity: 0;
+    transition-duration: 0.35s, 0s;
+    transition-delay: 0s, calc(0s + 0.35s);
+}
+
+#checkbox:checked + .toggle .bar--bottom {
+    top: calc(50% - 4px / 2);
+    transform: rotate(-45deg);
+    transition-delay: calc(0s + 0.35s * 1.3), calc(0s + 0.35s * 1.3);
+}
+.toggle{
+    display: none;
+}
+.cta-button {
+    font-weight: bolder;
+    padding: 20px 30px;
+    color: white;
+    background-color: #00005B;
+    border-radius: 30px;
+    border: 4px solid white;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.cta-button:hover {
+    background-color: #00008B; /* Slightly lighter shade of blue */
+    transform: scale(1.05); /* Slightly increases the size */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4); /* Enhances the shadow */
+}
+.learn-more{
+    font-weight: bolder;
+    padding: 20px 30px;
+    color: #00005B;
+    background-color: #ffffff;
+    border-radius: 30px;
+    border: 4px solid #00005B;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+.learn-more:hover {
+    background-color: #ffffff; /* Slightly lighter shade of blue */
+    transform: scale(1.05); /* Slightly increases the size */
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.4); /* Enhances the shadow */
+}
+
+/* Show toggle only on mobile devices */
+@media screen and (max-width: 960px) {
+    nav img{
+        width: 180px;
+        height: auto;
+    }
+    .toggle {
+        display: block;
+        margin-right: 2vw;
+    }
+    #navpart2 {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.622);
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        text-align: center;
+        padding: 10px 0;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    #checkbox:checked ~ #navpart2 {
+        transform: translateY(0);
+    }
+
+    nav .cta-button {
+        display: none; /* Hide button on mobile */
+    }
+
+    /* Hide navigation links on mobile by default */
+    #navpart2 a {
+        display: block;
+        padding: 15px;
+        z-index: 1000;
+    }
+}
+
+
+.hero {
+    height: 40vw;
+    background: url(assets/herobg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Optional: adds padding for small screens */
+}
+
+.hero h1{
+    font-size: 40px;
+    color: white;
+    margin: 0;
+}
+
+.hero h2{
+    color: white;
+    font-size:20px;
+    margin-top: 10px;
+}
+
+.box{
+    padding: 50px;
+    width: 40vw;
+    gap: 30px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 1px solid white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.buttons{
+   display: flex;
+   gap: 100px;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 50vh; /* Adjust height to a viewport height value */
+        padding: 20px;
+    }
+    .box {
+        gap: 20px;
+        width: 90%;   /* Make the box nearly full width */
+        padding: 20px; /* Reduce padding for better fit on small screens */
+    }
+    .hero h1 {
+        font-size: 20px; /* Scale down heading */
+    }
+    .hero h2 {
+        font-size: 14px; /* Scale down subheading */
+    }
+    .buttons {
+        gap: 20px;              /* Reduce gap between buttons */
+    }
+}
+span{
+    background: linear-gradient(to right,red,blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.services h1{
+    font-size: 50px;
+    font-weight: 500;
+}
+.services{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #F0F8F0; /* Added # for valid hex color */
+    padding: 20px;
+}
+.serviceboxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 80px;
+}
+.servicebox{
+    padding: 20px;
+    display: flex;
+    max-width: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid green;
+    border-radius: 20px;
+    background-color: white;
+}
+.servicebox h5{
+    color: green;
+    font-size: 25px;
+    font-weight: 400;
+}
+.servicebox h7{
+    text-align: center;
+    font-size: 15px;
+}
+.servicebox img{
+    width: 100px;
+    height: 100px;
+}
+
+/* Mobile Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .services h1 {
+        font-size: 35px; /* Scale down heading */
+    }
+    .serviceboxes {/* Stack service boxes vertically */
+        gap: 10px; /* Reduced gap for mobile */
+    }
+    .servicebox {
+        max-width: 100px; /* Reduced width */
+        height: 180px;
+        padding: 15px;  /* Reduced padding */
+    }
+    .servicebox h5 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        text-align: center;
+        font-size: 18px; /* Smaller heading */
+    }
+    .servicebox h7 {
+        font-size: 12px; /* Smaller text */
+    }
+    .servicebox img {
+        width: 40px; /* Reduced image size */
+        height: 40px;
+    }
+}
+.application{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E8F4FD;
+    flex-direction: column;
+}
+.application h1{
+    font-size: 40px;
+    font-weight: 500;
+    padding-bottom: -20px;
+}
+.application-section {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 3rem;
+    background: var(--star-white, #fff);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    position: relative;
+}
+.application-section{
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--navy-blue, #002B5C);
+    position: relative;
+    font-size: 2.2rem;
+}
+
+.form-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--usa-red, #BF0A30), var(--navy-blue, #002B5C));
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    color: var(--navy-blue, #002B5C);
+    font-size: 0.95rem;
+}
+
+input, select, textarea {
+    width: 90%;
+    padding: 1.1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--usa-red, #BF0A30);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(191,10,48,0.1);
+}
+
+.donation-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: linear-gradient(45deg, rgba(10, 191, 34, 0.05), rgba(0,40,104,0.05));
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+    border: 2px dashed var(--usa-red, #0abf34);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.donation-option:hover {
+    transform: translateY(-2px);
+}
+
+.donation-option input {
+    width: 24px;
+    height: 24px;
+    accent-color: var(--success-green, #28A745);
+    flex-shrink: 0;
+}
+.submit-icon {
+    width: 24px;      /* Adjust the size as needed */
+    height: 24px;
+    margin-right: 0.5rem; /* Adds space between the icon and text */
+    vertical-align: middle;
+}
+
+.donation-option label {
+    margin: 0;
+    font-weight: 500;
+    color: #444;
+    line-height: 1.5;
+}
+
+.video-upload {
+    background: rgba(0,40,104,0.03);
+    border: 2px dashed var(--navy-blue, #002B5C);
+    padding: 2.5rem;
+    text-align: center;
+    margin: 2.5rem 0;
+    border-radius: 12px;
+    transition: background 0.3s;
+}
+
+.video-upload:hover {
+    background: rgba(0,40,104,0.06);
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--navy-blue, #002B5C);
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 2rem;
+    color: var(--usa-red, #BF0A30);
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.btn-submit {
+    background: #00005B;
+    color: white;
+    padding: 1.4rem 3rem;
+    font-size: 1.1rem;
+    border-radius: 14px;
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,40,104,0.3);
+}
+.upload-icon {
+    width: 40px;  /* Adjust width as needed */
+    height: 40px; /* Adjust height as needed */
+    object-fit: contain; /* Keeps aspect ratio */
+    /* Remove font-size and color properties since we're using an image */
+}
+.application a{
+    text-decoration: none;
+    text-align: center;
+}
+.application p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .application h1{
+        font-size: 20px;
+    }
+    .application-section h2{
+        font-size: 20px;
+    }
+    .application-section {
+        margin: 2rem;
+        padding: 2rem;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}/* Base CSS */
+.goldcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 20px;
+    background-color: #FFFFE9;
+  }
+  
+  .goldcard img {
+    width: 250px;
+    height: auto;
+    border-radius: 30px;
+  }
+  
+  .goldcard h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  /* Steps Indicator */
+  .steps-indicator {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    background: #ccc;
+    color: #000;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .step span {
+    font-weight: normal;
+    font-size: 0.7rem;
+    display: block;
+    margin-top: 4px;
+  }
+  
+  .step.active {
+    background: #28a745;
+    color: #fff;
+  }
+  
+  /* Ensure complete state remains green */
+  .step.complete {
+    background: #28a745 !important;
+    color: #fff !important;
+  }
+  
+  /* Form Container */
+  #goldCardForm {
+    background: linear-gradient(to bottom, #FFD700, #FFD700);
+    border-radius: 20px;
+    width: 80%;
+    max-width: 850px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid black;
+  }
+  
+  /* Individual Steps */
+  .form-step {
+    display: none;
+  }
+  
+  .form-step-active {
+    display: block;
+  }
+  
+  .form-step h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #000;
+  }
+  
+  .goldcard label {
+    display: block;
+    margin: 1rem 0 0.4rem;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .goldcard input,
+  .goldcard select,
+  .goldcard textarea {
+    width: 95%;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .goldcard input:focus,
+  .goldcard select:focus,
+  .goldcard textarea:focus {
+    border-color: #000;
+  }
+  
+  .goldcard .btn-next,
+  .goldcard .btn-prev,
+  .goldcard .btn-submit {
+    background: #00008B;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+  
+  .goldcard .btn-next:hover,
+  .goldcard .btn-prev:hover,
+  .goldcard .btn-submit:hover {
+    background: #1A1AB9;
+  }
+  
+  .goldcard .btn-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .goldcard fieldset {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .goldcard legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: #000;
+  }
+  
+  .goldcard .radio-group,
+  .goldcard .checkbox-group {
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .goldcard .radio-group label,
+  .goldcard .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+  
+  /* Ensure disabled textareas remain visible */
+  .goldcard textarea:disabled {
+    background-color: #f9f9f9;
+    color: #777;
+    display: none;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .goldcard h1 {
+      font-size: 24px;
+    }
+    
+    .steps-indicator {
+      gap: 0.5rem;
+    }
+    
+    .step {
+      width: 70px;
+      height: 70px;
+      font-size: 0.8rem;
+    }
+    
+    .step span {
+      font-size: 0.6rem;
+    }
+    
+    #goldCardForm {
+      width: 80%;
+      padding: 1rem;
+    }
+    
+    .goldcard input,
+    .goldcard select,
+    .goldcard textarea {
+      width: 90%;
+      padding: 0.6rem;
+      font-size: 0.9rem;
+    }
+    
+    .goldcard .btn-next,
+    .goldcard .btn-prev,
+    .goldcard .btn-submit {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  

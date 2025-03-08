@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav role="navigation">
+        <img src="assets/logo.png" alt="Logo" width="450" height="60">
+    
+        <!-- Mobile Menu Toggle -->
+        <input type="checkbox" id="checkbox" class="menu-checkbox" />
+        <label for="checkbox" class="toggle" aria-label="Toggle Navigation Menu">
+          <div class="bar bar--top"></div>
+          <div class="bar bar--middle"></div>
+          <div class="bar bar--bottom"></div>
+        </label>
+    
+        <!-- Navigation Links -->
+        <ul id="navpart2">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="services.html">JOB CATEGORIES</a></li>
+          <li><a href="portfolio.html">HOW IT WORKS</a></li>
+          <li><a href="quizzes.html">DONATE</a></li>
+          <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+
+    <button class="cta-button">Apply Now</button>       
+      </nav>
+
+      <section class="hero">
+        <div class="box">
+            <h1>Achieve Your American Dream. <br>Apply for Citizenship Today!</h1>
+            <h2>Unlock endless opportunities with trusted guidance, expert legal support, and a clear pathway to a prosperous future in the United States.</h2>
+            <div class="buttons">
+                <button class="cta-button">Apply Now</button> 
+                <button class="learn-more">Learn More</button>  
+            </div>
+        </div>
+      </section>
+      <section class="services">
+        <h1><span>Services We Offer</span></h1>
+        <div class="serviceboxes">
+            <div class="servicebox">
+                <img src="assets/sponsored.png" alt="Sponsored icon">
+                <h5>Get Sponsored</h5>
+                <h7>Secure a company sponsor for your application.</h7>
+            </div>
+            <div class="servicebox">
+                <img src="assets/stayprotected.png" alt="stayprotected icon">
+                <h5>Stay Protected</h5>
+                <h7>Legal support throughout the process.</h7>
+            </div>
+            <div class="servicebox">
+                <img src="assets/buildfuture.png" alt="buildfuture icon">
+                <h5>Build Your Future</h5>
+                <h7>Start working towards citizenship.</h7>
+            </div>
+        </div>
+      </section>
+
+     <section class="application">
+        <h1><span>Apply to Become a US Citizen Today!</span></h1>
+        <div class="application-section">
+    <h2 class="form-title"><span>Citizenship Application Form</span></h2>
+    <form action="/submit_application" method="POST">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="fullName">Full Legal Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="citizenship">Current Citizenship</label>
+                <select id="citizenship" name="citizenship" required>
+                    <option value="">Select Country</option>
+                    <!-- Add country options here -->
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="uk">UK</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="desiredJob">Desired Job in America</label>
+                <select id="desiredJob" name="desiredJob" required>
+                    <option value="">Select Job</option>
+                    <!-- Add job options here -->
+                    <option value="tech">Technology</option>
+                    <option value="health">Healthcare</option>
+                    <option value="education">Education</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Place of Residence</label>
+            <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jobExperience">Job Experience</label>
+            <textarea id="jobExperience" name="jobExperience" rows="3" placeholder="Describe your experience" required></textarea>
+        </div>    
+
+        <div class="donation-option">
+            <input type="checkbox" id="donation" name="donation" value="yes">
+            <label for="donation">I’d like to expedite my application with a $49.99 donation to the American Border Foundation.</label>
+        </div>
+
+        <div class="video-upload">
+            <label class="upload-label" for="videoUpload">
+                <img src="assets/videoicon.png" alt="Video Icon" class="upload-icon">
+                <span>Tell us why you want to become a U.S. Citizen! (2 Min Max)</span>
+                <input type="file" id="videoUpload" name="videoUpload" accept="video/*" hidden>
+            </label>
+        </div>        
+
+        <div class="submit-section">
+            <button type="submit" class="btn-submit">
+                <img src="assets/airplane.png" alt="Airplane Icon" class="submit-icon">
+                Submit Application
+            </button>
+        </div>        
+            <p>
+                <a href="#">Are you a company looking to sponsor a pathway to citizenship? <br>Click here to learn more.</a>
+            </p>
+        </div>
+    </form>
+</div>
+</section>
+
+<section class="goldcard">
+    <img src="assets/goldcard.png" alt="">
+    <h1><span>Are you looking for U.S. 'Gold Card' visa?<br>We Got you covered.</span></h1>
+  
+    <!-- Step Indicator -->
+    <div class="steps-indicator">
+      <div class="step active">1<br><span>Personal Details</span></div>
+      <div class="step">2<br><span>Investment Details</span></div>
+      <div class="step">3<br><span>Financial Info</span></div>
+      <div class="step">4<br><span>Professional Background</span></div>
+      <div class="step">5<br><span>Social Media</span></div>
+      <div class="step">6<br><span>Supporting Docs</span></div>
+      <div class="step">7<br><span>Legal & Compliance</span></div>
+      <div class="step">8<br><span>Payment Info</span></div>
+    </div>
+  
+    <!-- Multi-step form -->
+    <form id="goldCardForm" action="#" method="POST" enctype="multipart/form-data">
+      <!-- STEP 1: Personal Details -->
+      <div class="form-step form-step-active">
+        <h2>Personal Details</h2>
+        
+        <label for="fullName">Full Legal Name</label>
+        <input type="text" id="fullName" name="fullName" required>
+  
+        <label for="placeOfBirth">Place of Birth</label>
+        <input type="text" id="placeOfBirth" name="placeOfBirth" required>
+  
+        <label for="nationality">Nationality</label>
+        <select id="nationality" name="nationality" required>
+          <option value="">Select</option>
+          <option value="USA">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="UK">UK</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="passportNumber">Passport Number</label>
+        <input type="text" id="passportNumber" name="passportNumber" required>
+  
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+  
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="maritalStatus">Marital Status</label>
+        <select id="maritalStatus" name="maritalStatus" required>
+          <option value="">Select</option>
+          <option value="Single">Single</option>
+          <option value="Married">Married</option>
+        </select>
+  
+        <label for="passportIssueDate">Passport Issuance Date</label>
+        <input type="date" id="passportIssueDate" name="passportIssueDate" required>
+  
+        <label for="passportExpiryDate">Passport Expiry Date</label>
+        <input type="date" id="passportExpiryDate" name="passportExpiryDate" required>
+  
+        <label for="residentialAddress">Residential Address</label>
+        <input type="text" id="residentialAddress" name="residentialAddress" required>
+  
+        <label for="phoneNumber">Phone Number</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+  
+        <label for="emailAddress">Email Address</label>
+        <input type="email" id="emailAddress" name="emailAddress" required>
+  
+        <button type="button" class="btn-next">Next Section</button>
+      </div>
+  
+      <!-- STEP 2: Investment Details -->
+      <div class="form-step">
+        <h2>Investment Details</h2>
+        
+        <label for="investmentAmount">Intended Investment Amount (in USD)</label>
+        <input type="number" id="investmentAmount" name="investmentAmount" required>
+  
+        <label for="sourceFunds">Source of Investment Funds</label>
+        <select id="sourceFunds" name="sourceFunds" required>
+          <option value="">Select</option>
+          <option value="Savings">Savings</option>
+          <option value="Inheritance">Inheritance</option>
+          <option value="Sale of Business">Sale of Business</option>
+          <option value="Investments">Investments</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="investmentSector">Planned Investment Sector in the U.S.</label>
+        <select id="investmentSector" name="investmentSector" required>
+          <option value="">Select</option>
+          <option value="Technology">Technology</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Healthcare">Healthcare</option>
+          <option value="Finance">Finance</option>
+          <option value="Manufacturing">Manufacturing</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="businessPlan">Business Plan Overview (Upload Doc)</label>
+        <input type="file" id="businessPlan" name="businessPlan" accept=".pdf,.doc,.docx" required>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+  
+      <!-- STEP 3: Financial Information -->
+      <div class="form-step">
+        <h2>Financial Information</h2>
+  
+        <label for="bankStatements">Recent Bank Statements (last 6 months)</label>
+        <input type="file" id="bankStatements" name="bankStatements" accept=".pdf,.jpg,.png,.doc,.docx" required>
+  
+        <label for="taxReturns">Tax Returns (last 2 years)</label>
+        <input type="file" id="taxReturns" name="taxReturns" accept=".pdf,.doc,.docx" required>
+  
+        <label for="assetValuation">Asset Valuation Reports</label>
+        <input type="file" id="assetValuation" name="assetValuation" accept=".pdf,.doc,.docx" required>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+  
+      <!-- STEP 4: Professional Background -->
+      <div class="form-step">
+        <h2>Professional Background</h2>
+  
+        <label for="currentOccupation">Current Occupation/Title</label>
+        <select id="currentOccupation" name="currentOccupation" required>
+          <option value="">Select</option>
+          <option value="Employed">Employed</option>
+          <option value="Self-Employed">Self-Employed</option>
+          <option value="Business Owner">Business Owner</option>
+          <option value="Retired">Retired</option>
+          <option value="Student">Student</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" name="companyName" required>
+  
+        <label for="companyAddress">Company Address</label>
+        <input type="text" id="companyAddress" name="companyAddress" required>
+  
+        <label for="durationEmployment">Duration of Employment</label>
+        <input type="text" id="durationEmployment" name="durationEmployment" required>
+  
+        <label for="previousPositions">Previous Positions</label>
+        <textarea id="previousPositions" name="previousPositions" rows="3" required></textarea>
+  
+        <label for="licenses">Professional Licenses or Certifications</label>
+        <textarea id="licenses" name="licenses" rows="2" required></textarea>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+  
+      <!-- STEP 5: Social Media and Online Presence -->
+      <div class="form-step">
+        <h2>Social Media and Online Presence</h2>
+  
+        <label for="linkedIn">LinkedIn Profile URL</label>
+        <input type="url" id="linkedIn" name="linkedIn" required>
+  
+        <label for="instagram">Instagram Handle</label>
+        <input type="text" id="instagram" name="instagram" required>
+  
+        <label for="website">Personal or Business Website</label>
+        <input type="url" id="website" name="website" required>
+  
+        <label for="facebook">Facebook Profile URL</label>
+        <input type="url" id="facebook" name="facebook" required>
+  
+        <label for="twitter">X (Twitter) Handle</label>
+        <input type="text" id="twitter" name="twitter" required>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+  
+      <!-- STEP 6: Supporting Documents -->
+      <div class="form-step">
+        <h2>Supporting Documents</h2>
+  
+        <label for="passportBio">Copy of Passport Bio Page</label>
+        <input type="file" id="passportBio" name="passportBio" accept=".pdf,.jpg,.png" required>
+  
+        <label for="recommendationLetters">Letters of Recommendation</label>
+        <input type="file" id="recommendationLetters" name="recommendationLetters" accept=".pdf,.doc,.docx" required>
+  
+        <label for="passportPhoto">Passport-Sized Photograph</label>
+        <input type="file" id="passportPhoto" name="passportPhoto" accept=".jpg,.png" required>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+  
+      <!-- STEP 7: Legal and Compliance -->
+      <div class="form-step">
+        <h2>Legal and Compliance</h2>
+    
+        <!-- Criminal Record Declaration -->
+        <fieldset>
+          <legend>Criminal Record Declaration</legend>
+          <p>Have you ever been convicted in a criminal case?</p>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="criminalRecord" value="No" required>
+              No
+            </label>
+            <label>
+              <input type="radio" name="criminalRecord" value="Yes" required>
+              Yes
+            </label>
+          </div>
+          <textarea id="criminalDetails" name="criminalDetails" rows="3" placeholder="If yes, please provide details here."  disabled></textarea>
+        </fieldset>
+    
+        <!-- Previous U.S. Visa Applications -->
+        <fieldset>
+          <legend>Previous U.S. Visa Applications</legend>
+          <p>Have you previously applied for a U.S. visa?</p>
+          <div class="radio-group">
+            <label>
+              <input type="radio" name="previousVisa" value="No" required>
+              No
+            </label>
+            <label>
+              <input type="radio" name="previousVisa" value="Yes" required>
+              Yes
+            </label>
+          </div>
+          <textarea id="visaDetails" name="visaDetails" rows="3" placeholder="If yes, please provide details here." disabled></textarea>
+        </fieldset>
+    
+        <!-- Declarations and Consents -->
+        <fieldset>
+          <legend>Declarations and Consents</legend>
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" name="usLaws" required>
+              Agreement to U.S. Laws and Regulations
+            </label>
+            <label>
+              <input type="checkbox" name="dataConsent" required>
+              Consent to Data Processing
+            </label>
+            <label>
+              <input type="checkbox" name="programTerms" required>
+              Acknowledgment of Program Terms
+            </label>
+          </div>
+        </fieldset>
+    
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="button" class="btn-next">Next Section</button>
+        </div>
+      </div>
+    
+      <!-- STEP 8: Payment Information -->
+      <div class="form-step">
+        <h2>Payment Information</h2>
+  
+        <label for="paymentCrypto">Preferred Cryptocurrency for Payment</label>
+        <select id="paymentCrypto" name="paymentCrypto" required>
+          <option value="">Select</option>
+          <option value="Bitcoin">Bitcoin</option>
+          <option value="Ethereum">Ethereum</option>
+          <option value="USDT">USDT</option>
+          <option value="Other">Other</option>
+        </select>
+  
+        <label for="walletAddress">Cryptocurrency Wallet Address</label>
+        <input type="text" id="walletAddress" name="walletAddress" required>
+  
+        <div class="btn-group">
+          <button type="button" class="btn-prev">Previous</button>
+          <button type="submit" class="btn-submit">Submit Application</button>
+        </div>
+      </div>
+    </form>
+  
+
+  <!-- JS to Handle Step Navigation -->
+  <script src="script.js"></script>
+</section>
+
+
+</body>
+</html>
