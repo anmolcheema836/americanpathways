@@ -5,7 +5,7 @@ body {
     font-family: 'Outfit', sans-serif;
     color: #000;
     width: 100vw;
-    height: auto;
+    height: 100%;
     overflow-x: hidden;
 }
 html, body {
@@ -844,7 +844,7 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
     padding: 1rem;
     width: 50px;
-    height: 450px;
+    height: 500px;
   }
   
   .testimonial-card img {
